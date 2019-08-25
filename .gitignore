@@ -1,0 +1,7 @@
+datafeeds/*
+bin/
+include/
+lib/
+*.output.csv
+.Python
+pip-selfcheck.json

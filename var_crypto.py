@@ -19,6 +19,9 @@ DEFAULT_SYMBOLS = {
     'EOS': 'USD',
     }
 DATAFILE_PATTERN = 'datafeeds/currency_daily_{}_{}.csv'
+
+# TODO: convert configuration parameters to command-line options
+
 VOL_PERIOD_t = 1
 HORIZON_T = 3
 CONFIDENCE_LEVEL = 0.95
@@ -52,7 +55,7 @@ def load_data(
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Calculate VWMA.')
+    parser = argparse.ArgumentParser(description='Calculate VaR.')
 
     parser.add_argument('--start', metavar='N', type=int,
                         default=SAMPLE_START,
@@ -95,4 +98,4 @@ if __name__ == '__main__':
                      , symbol, normal_deviate, vol_horizon, var_t_pct)
     outdf = pd.DataFrame(output)
     outdf = outdf.set_index('symbol')
-    outdf.to_csv("{}.output.csv".format(os.path.splitext(os.path.basename(__file__))[0]))
+    outdf.to_csv('{}.output.csv'.format(os.path.splitext(os.path.basename(__file__))[0]))

@@ -1,5 +1,21 @@
 # Value-at-Risk (VaR) Calculator
 
+## Importing Datafeeds
+
+You must first download or update the datafile for each symbol that you wish to include in your calculation.
+
+    $ ./fetch_datafeeds.sh BTC
+    Fetching https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=USD&apikey=APIKEY&datatype=csv...
+    --2019-08-25 11:58:23--  https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=USD&apikey=APIKEY&datatype=csv
+    Resolving www.alphavantage.co... 52.22.145.207, 34.236.110.238, 52.23.2.88, ...
+    Connecting to www.alphavantage.co|52.22.145.207|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: unspecified [application/x-download]
+    Saving to: 'datafeeds/currency_daily_BTC_USD.csv'
+        [ <=>                                                                                                        ] 114,655      612KB/s   in 0.2s   
+    2019-08-25 11:58:24 (612 KB/s) - 'datafeeds/currency_daily_BTC_USD.csv' saved [114655]
+
+
 ## CONFIGURATION - Cryptocurrency VaR
 
 Inspect the constants in the calculator to adjust for your model:

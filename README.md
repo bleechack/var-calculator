@@ -1,6 +1,6 @@
 # Value-at-Risk (VaR) Calculator
 
-## Importing Datafeeds
+## Importing Datafeeds - Cryptocurrencies
 
 You must first download or update the datafile for each symbol that you wish to include in your calculation.
 
@@ -26,7 +26,7 @@ Inspect the constants in the calculator to adjust for your model:
     SAMPLE_START - Starting position in datafile (# of days ago)
     SAMPLE_LENGTH - Number of days to use for volatility calculation
 
-## USAGE - Crypto VaR
+## USAGE - Cryptocurrency VaR
     usage: var_crypto.py [-h] [--start N] [--length N]
 
     Calculate VaR.

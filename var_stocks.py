@@ -17,7 +17,7 @@ DATAFILE_PATTERN = 'datafeeds/daily_adjusted_{}.csv'
 # TODO: convert configuration parameters to command-line options
 
 VOL_PERIOD_t = 1
-HORIZON_T = 30
+HORIZON_T = 20
 CONFIDENCE_LEVEL = 0.95
 SAMPLE_START = 1  # rows from beginning of file
 SAMPLE_LENGTH = 90
@@ -33,11 +33,7 @@ def get_datafile(symbol):
     return DATAFILE_PATTERN.format(symbol)
 
 
-def load_data(
-    symbol,
-    start,
-    length,
-    ):
+def load_data(symbol, start, length):
 
     datafile = get_datafile(symbol)
     df = pd.read_csv(datafile)
@@ -59,8 +55,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     output = []
     for symbol in DEFAULT_SYMBOLS:
-        close_delta = load_data(symbol, args.start,
-                                args.length)['close'].pct_change()
+        close_delta = load_data(symbol, args.start, args.length)['close'
+                ].pct_change()
         sigma = close_delta.std()
         mu = close_delta.mean()
         kurt = close_delta.kurtosis()
